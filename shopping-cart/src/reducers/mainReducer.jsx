@@ -9,10 +9,33 @@ const primaryState = {
   shoppingCart: [],
 };
 
-const mainReducer = (state = primaryState, action) => {
-  switch (action.type) {
+const mainReducer = (state = primaryState, { type, id }) => {
+  switch (type) {
     case 'ADD_TO_CART':
-      return state; // Add code -> item click
+      const chosenProduct = state.products.find(product => product.id === id);
+      console.log('chosenProduct:', chosenProduct);
+      if (chosenProduct && chosenProduct.quantity > 0) {
+        const updatedPrice = state.totalPrice + chosenProduct.price; // Raising the total amount
+        chosenProduct.quantity -= 1; // Reducing the quantity of the product
+        // Add the product to the product cart
+        const productOnCart = state.shoppingCart.find(
+          product => product.id === id
+        );
+        if (productOnCart) {
+          productOnCart.quantity += 1;
+        } else {
+          const { id, name } = chosenProduct;
+          state.shoppingCart.push({ id, name, quantity: 1 });
+        }
+        return {
+          ...state,
+          products: [...state.products],
+          totalPrice: updatedPrice,
+          shoppingCart: [...state.shoppingCart],
+        };
+      } else {
+        return state;
+      }
     case 'BUY':
       return { ...state, totalPrice: 0, shoppingCart: [] };
     default:
