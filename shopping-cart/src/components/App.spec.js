@@ -61,9 +61,8 @@ describe('<App />', () => {
   describe('BUY event', () => {
     beforeAll(() => {
       const component = setUp();
-      // Press on add to cart X 3
+      // Press on add to cart X 2 + 1 from last test
       const firstAddToCart = component.container.querySelector('.add-to-cart');
-      fireEvent.click(firstAddToCart);
       fireEvent.click(firstAddToCart);
       fireEvent.click(firstAddToCart);
     });
@@ -72,6 +71,15 @@ describe('<App />', () => {
       const component = setUp();
       const buyBtn = component.container.querySelector('.buy-btn');
       expect(buyBtn).not.toHaveAttribute('disabled');
+    });
+
+    test('total price resets', () => {
+      const component = setUp();
+      const totalPrice = component.container.querySelector('.total-price');
+      expect(totalPrice).toHaveTextContent('150.03');
+      const buyBtn = component.container.querySelector('.buy-btn');
+      fireEvent.click(buyBtn);
+      expect(totalPrice).toHaveTextContent('0');
     });
   });
 });
