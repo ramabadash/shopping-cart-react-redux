@@ -73,13 +73,18 @@ describe('<App />', () => {
       expect(buyBtn).not.toHaveAttribute('disabled');
     });
 
-    test('total price resets', () => {
+    test('total price and amount resets', () => {
       const component = setUp();
       const totalPrice = component.container.querySelector('.total-price');
       expect(totalPrice).toHaveTextContent('150.03');
+
+      const amount = component.container.querySelector('.amount');
+      expect(amount).toHaveTextContent('3');
+
       const buyBtn = component.container.querySelector('.buy-btn');
       fireEvent.click(buyBtn);
       expect(totalPrice).toHaveTextContent('0');
+      expect(amount).toHaveTextContent('0');
     });
   });
 });
