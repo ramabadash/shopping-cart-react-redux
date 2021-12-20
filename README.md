@@ -30,8 +30,8 @@
 
 #### Screen shots 🤳📸 -
 
-## <img src="./readme-img/full-cart.png" width="70%">
+## <img src="./readme-img/full-cart.png" >
 
-## <img src="./readme-img/empty-cart.png" width="70%">
+## <img src="./readme-img/empty-cart.png" >
 
 ---
