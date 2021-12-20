@@ -57,6 +57,23 @@ describe('<App />', () => {
       expect(totalPrice).toHaveTextContent('50.01');
     });
   });
+
+  describe('BUY event', () => {
+    beforeAll(() => {
+      const component = setUp();
+      // Press on add to cart X 3
+      const firstAddToCart = component.container.querySelector('.add-to-cart');
+      fireEvent.click(firstAddToCart);
+      fireEvent.click(firstAddToCart);
+      fireEvent.click(firstAddToCart);
+    });
+
+    test('buy button is not disabled', () => {
+      const component = setUp();
+      const buyBtn = component.container.querySelector('.buy-btn');
+      expect(buyBtn).not.toHaveAttribute('disabled');
+    });
+  });
 });
 
 const setUp = () =>
