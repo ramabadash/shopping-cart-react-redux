@@ -1,19 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import '../styles/Cart.css';
 
-// TODO -
-// 1  ADD STATES TO : TOTAL PRICE , TOTAL AMOUNT , CART ITEMS
-export default function Cart() {
+function Cart({ totalPrice, shoppingCart }) {
+  /*****  FUNCTIONS *****/
+  // Get total quantity of items
+  const getAmountFromCart = () => {
+    const sum =
+      shoppingCart.length > 0
+        ? shoppingCart.reduce(
+            (previousValue, { quantity }) => previousValue + quantity,
+            0
+          )
+        : 0;
+    return sum;
+  };
+
   return (
     <div className='cart-div'>
       <div className='cart-details'>
         <div className='cart-subj'>
           <i className='fas fa-shopping-cart'></i>{' '}
-          <span className='amount'>{0}</span>
+          <span className='amount'>{getAmountFromCart()}</span>
         </div>
         <div className='cart-subj'>
           <i className='fas fa-dollar-sign'></i>{' '}
-          <span className='total-price'>Total price: {0}</span>{' '}
+          <span className='total-price'>Total price: {totalPrice}</span>{' '}
         </div>
         <div className='cart-subj'>
           <i className='fas fa-cash-register'></i> <button>Buy</button>{' '}
@@ -21,8 +33,28 @@ export default function Cart() {
       </div>
       <div className='cart-subj'>
         <h3>Items:</h3>
-        <ul className='cart-items'></ul>
+        <ul className='cart-items'>
+          {shoppingCart.length > 0 ? (
+            shoppingCart.map(product => (
+              <li key={product.id}>
+                {product.name} | {product.quantity}
+              </li>
+            ))
+          ) : (
+            <p>Add items to cart!</p>
+          )}
+        </ul>
       </div>
     </div>
   );
 }
+
+// Get products from state
+const mapStateToProps = state => {
+  return {
+    totalPrice: state.totalPrice,
+    shoppingCart: state.shoppingCart,
+  };
+};
+
+export default connect(mapStateToProps, null)(Cart);
