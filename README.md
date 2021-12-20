@@ -1,5 +1,8 @@
 # React-Redux Assignment: shopping-cart with react redux
 
+![alt text](./logo192.png 'logo')
+![alt text](./cart.png 'cart')
+
 ---
 
 ### Resources
