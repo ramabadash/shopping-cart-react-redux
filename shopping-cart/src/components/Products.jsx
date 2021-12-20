@@ -13,7 +13,9 @@ function Products({ products, addToCart }) {
             return (
               <div className='product-div' key={product.id}>
                 <span>{product.name}</span> <span>Price: {product.price}$</span>{' '}
-                <span>Quantity: {product.quantity}</span>
+                <span className='quantity-span'>
+                  Quantity: {product.quantity}
+                </span>
                 <div>
                   <button
                     className='add-to-cart'
