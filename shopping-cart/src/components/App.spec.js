@@ -33,14 +33,22 @@ describe('<App />', () => {
   });
 
   describe('Buy one item', () => {
-    test('quantity is down by 1', () => {
+    beforeAll(() => {
       const component = setUp();
-      const firstQuantity = component.container.querySelector('.quantity-span');
-      expect(firstQuantity).toHaveTextContent('8');
       // Press on buy item
       const firstAddToCart = component.container.querySelector('.add-to-cart');
       fireEvent.click(firstAddToCart);
+    });
+    test('quantity is down by 1', () => {
+      const component = setUp();
+      const firstQuantity = component.container.querySelector('.quantity-span');
       expect(firstQuantity).toHaveTextContent('7');
+    });
+
+    test('total amount is up by 1', () => {
+      const component = setUp();
+      const amount = component.container.querySelector('.amount');
+      expect(amount).toHaveTextContent('1');
     });
   });
 });
