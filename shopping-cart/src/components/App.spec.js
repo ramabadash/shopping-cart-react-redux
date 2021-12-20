@@ -32,7 +32,7 @@ describe('<App />', () => {
     });
   });
 
-  describe('Buy one item', () => {
+  describe('Buy one item (first item)', () => {
     beforeAll(() => {
       const component = setUp();
       // Press on buy item
@@ -49,6 +49,12 @@ describe('<App />', () => {
       const component = setUp();
       const amount = component.container.querySelector('.amount');
       expect(amount).toHaveTextContent('1');
+    });
+
+    test('total price is up by 50.01', () => {
+      const component = setUp();
+      const totalPrice = component.container.querySelector('.total-price');
+      expect(totalPrice).toHaveTextContent('50.01');
     });
   });
 });
