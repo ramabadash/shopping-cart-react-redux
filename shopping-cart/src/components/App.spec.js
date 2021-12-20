@@ -13,6 +13,16 @@ describe('<App />', () => {
     const header = component.container.querySelector('h1');
     expect(header).toHaveTextContent('Shopping cart');
   });
+
+  describe('<Cart />', () => {
+    test('initial state empty', () => {
+      const component = setUp();
+      const amount = component.container.querySelector('.amount');
+      const totalPrice = component.container.querySelector('.total-price');
+      expect(amount).toHaveTextContent('0');
+      expect(totalPrice).toHaveTextContent('0');
+    });
+  });
 });
 
 const setUp = () =>
