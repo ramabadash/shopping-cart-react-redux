@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { buy } from '../actions/shoppingActions';
 import '../styles/Cart.css';
 
-function Cart({ totalPrice, shoppingCart }) {
+function Cart({ totalPrice, shoppingCart, buy }) {
   /*****  FUNCTIONS *****/
   // Get total quantity of items
   const getAmountFromCart = () => {
@@ -28,7 +29,8 @@ function Cart({ totalPrice, shoppingCart }) {
           <span className='total-price'>Total price: {totalPrice}</span>{' '}
         </div>
         <div className='cart-subj'>
-          <i className='fas fa-cash-register'></i> <button>Buy</button>{' '}
+          <i className='fas fa-cash-register'></i>{' '}
+          <button onClick={buy}>Buy</button>{' '}
         </div>
       </div>
       <div className='cart-subj'>
@@ -57,4 +59,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(Cart);
+// Get buy function
+const mapDispatchToProps = dispatch => {
+  return { buy: () => dispatch(buy()) };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
