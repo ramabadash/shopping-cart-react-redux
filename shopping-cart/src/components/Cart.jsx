@@ -29,9 +29,8 @@ function Cart({ totalPrice, shoppingCart, buy }) {
           <span className='total-price'>Total price: {totalPrice}</span>{' '}
         </div>
         <div className='cart-subj'>
-          <i className='fas fa-cash-register'></i>{' '}
-          <button onClick={buy} disabled={totalPrice === 0}>
-            Buy
+          <button className='buy-btn' onClick={buy} disabled={totalPrice === 0}>
+            <i className='fas fa-cash-register'></i> Buy
           </button>{' '}
         </div>
       </div>
@@ -41,7 +40,7 @@ function Cart({ totalPrice, shoppingCart, buy }) {
           {shoppingCart.length > 0 ? (
             shoppingCart.map(product => (
               <li key={product.id}>
-                {product.name} | {product.quantity}
+                <span>{product.name}</span> <span>{product.quantity}</span>
               </li>
             ))
           ) : (

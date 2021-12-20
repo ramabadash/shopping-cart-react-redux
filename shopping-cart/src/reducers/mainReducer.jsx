@@ -13,7 +13,6 @@ const mainReducer = (state = primaryState, { type, id }) => {
   switch (type) {
     case 'ADD_TO_CART':
       const chosenProduct = state.products.find(product => product.id === id);
-      console.log('chosenProduct:', chosenProduct);
       if (chosenProduct && chosenProduct.quantity > 0) {
         const updatedPrice = state.totalPrice + chosenProduct.price; // Raising the total amount
         chosenProduct.quantity -= 1; // Reducing the quantity of the product

@@ -8,7 +8,9 @@
   background-color: #555b6e;
   color: white;
   padding: 1em;
+  height: 25vh;
 }
+
 .cart-details {
   display: flex;
   flex-direction: row;
@@ -16,13 +18,40 @@
   justify-content: space-between;
   width: 100%;
 }
-.cart-subj {
+/* .cart-subj {
   width: 20%;
-}
+} */
 
 .amount {
   background-color: brown;
   border-radius: 50%;
   padding: 0.5em;
-  font-size: 0.75em;
+  font-size: 1em;
+}
+
+.buy-btn {
+  background-color: brown;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.cart-items {
+  list-style: none;
+  display: block;
+  margin: auto;
+  width: 100vh;
+  overflow-y: auto;
+  height: 8vh;
+  background-color: #828aa3;
+  padding: 0.5em;
+}
+
+.cart-items > li {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
 }
