@@ -1,0 +1,28 @@
+.cart-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  text-align: center;
+  background-color: #555b6e;
+  color: white;
+  padding: 1em;
+}
+.cart-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.cart-subj {
+  width: 20%;
+}
+
+.amount {
+  background-color: brown;
+  border-radius: 50%;
+  padding: 0.5em;
+  font-size: 0.75em;
+}
