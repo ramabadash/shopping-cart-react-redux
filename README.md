@@ -20,11 +20,11 @@
 
 **shopping cart features:**
 
-- [ ] you can add items to your shopping cart
-- [ ] items are limited by quantity
-- [ ] each item increases your total amount
-- [ ] checkout button will reset your total amount (keeping the current item quantity in stock)
-- [ ] checkout button is disabled when cart is empty
+- [x] you can add items to your shopping cart
+- [x] items are limited by quantity
+- [x] each item increases your total amount
+- [x] checkout button will reset your total amount (keeping the current item quantity in stock)
+- [x] checkout button is disabled when cart is empty
 - [ ] style your cart
 - [ ] write tests for shopping cart app
 
