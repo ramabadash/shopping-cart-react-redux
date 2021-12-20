@@ -1,4 +1,4 @@
-const primaryState = {
+export const primaryState = {
   products: [
     { id: 1, name: 'Jeans', price: 50.01, quantity: 8 },
     { id: 2, name: 'T- shirt', price: 10.99, quantity: 10 },
