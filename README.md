@@ -1,7 +1,6 @@
 # React-Redux Assignment: shopping-cart with react redux
 
-<img src="./readme-img/logo192.png" height="100px" width="100px"/>
-<img src="./readme-img/cart.png" height="100px" width="100px"/>
+<img src="./readme-img/logo192.png" height="100px" width="100px"/> <img src="./readme-img/cart.png" height="100px" width="100px"/>
 
 ---
 
