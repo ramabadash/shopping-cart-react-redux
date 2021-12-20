@@ -85,6 +85,12 @@ describe('<App />', () => {
       expect(totalPrice).toHaveTextContent('0');
       expect(amount).toHaveTextContent('0');
     });
+
+    test('product quantity is the same', () => {
+      const component = setUp();
+      const firstQuantity = component.container.querySelector('.quantity-span');
+      expect(firstQuantity).toHaveTextContent('5');
+    });
   });
 });
 
