@@ -1,0 +1,32 @@
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 0.75em;
+  padding: 0;
+  overflow: hidden;
+  background-color: #555b6e;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.nav-bar > li {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  align-content: center;
+}
+
+.buy-nav {
+  margin: 1em;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
+.amount {
+  background-color: brown;
+  border-radius: 50%;
+  padding: 0.5em;
+  font-size: 0.75em;
+}
