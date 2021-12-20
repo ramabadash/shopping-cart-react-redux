@@ -1,22 +1,11 @@
 # React-Redux Assignment: shopping-cart with react redux
 
-![alt text](./logo192.png 'logo')
-![alt text](./cart.png 'cart')
+<img src="./readme-img/logo192.png" height="100px" width="100px"/>
+<img src="./readme-img/cart.png" height="100px" width="100px"/>
 
 ---
 
-### Resources
-
-[reduxjs.org - Getting Started with Redux](https://redux.js.org/introduction/getting-started) \
-[react-redux.js.org - Getting Started with React Redux](https://react-redux.js.org/introduction/getting-started) \
-[A beginner’s guide to Redux with React](https://medium.com/@bretcameron/a-beginners-guide-to-redux-with-react-50309ae09a14)
-
----
-
-### Assignment
-
-**1. investigate todos-react-redux**
-**2. create a shopping cart**
+### My app -
 
 **shopping cart features:**
 
@@ -26,7 +15,24 @@
 - [x] checkout button will reset your total amount (keeping the current item quantity in stock)
 - [x] checkout button is disabled when cart is empty
 - [x] style your cart
-- [ ] write tests for shopping cart app
+- [x] write tests for shopping cart app
 
-* Example:
-  ![alt text](./redux_asignment.png 'Shopping Cart Example')
+#### **Tests** -
+
+- **mainReducer tests -**
+
+### <img src="./readme-img/mainReducer-tests.png" />
+
+- **App tests** -
+
+### <img src="./readme-img/app-tests.png" />
+
+---
+
+#### Screen shots 🤳📸 -
+
+## <img src="./readme-img/full-cart.png" width="70%">
+
+## <img src="./readme-img/empty-cart.png" width="70%">
+
+---

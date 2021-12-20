@@ -4,7 +4,6 @@ import { createStore } from 'redux';
 import rootReducer from '../reducers/mainReducer';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
-import { prettyDOM } from '@testing-library/react';
 
 const store = createStore(rootReducer);
 
