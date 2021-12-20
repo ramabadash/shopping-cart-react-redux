@@ -18,6 +18,7 @@ function Products({ products, addToCart }) {
                   <button
                     className='add-to-cart'
                     onClick={() => addToCart(product.id)}
+                    disabled={product.quantity === 0}
                   >
                     <i className='fas fa-cart-plus'></i> Add to cart
                   </button>

@@ -30,7 +30,9 @@ function Cart({ totalPrice, shoppingCart, buy }) {
         </div>
         <div className='cart-subj'>
           <i className='fas fa-cash-register'></i>{' '}
-          <button onClick={buy}>Buy</button>{' '}
+          <button onClick={buy} disabled={totalPrice === 0}>
+            Buy
+          </button>{' '}
         </div>
       </div>
       <div className='cart-subj'>

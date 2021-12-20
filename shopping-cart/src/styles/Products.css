@@ -22,3 +22,7 @@ h2 {
   border-radius: 0.5em;
   cursor: pointer;
 }
+.add-to-cart:disabled {
+  background-color: #abb0c0;
+  cursor: auto;
+}
