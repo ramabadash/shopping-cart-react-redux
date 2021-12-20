@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addToCart } from '../actions/shoppingActions';
 import '../styles/Products.css';
 
-function Products({ products }) {
+function Products({ products, addToCart }) {
   return (
     <div>
       <h2>Products:</h2>
@@ -14,7 +15,10 @@ function Products({ products }) {
                 <span>{product.name}</span> <span>Price: {product.price}$</span>{' '}
                 <span>Quantity: {product.quantity}</span>
                 <div>
-                  <button className='add-to-cart'>
+                  <button
+                    className='add-to-cart'
+                    onClick={() => addToCart(product.id)}
+                  >
                     <i className='fas fa-cart-plus'></i> Add to cart
                   </button>
                 </div>
@@ -34,4 +38,7 @@ const mapStateToProps = state => {
   return { products: state.products };
 };
 
-export default connect(mapStateToProps, null)(Products);
+const mapDispatchToProps = dispatch => {
+  return { addToCart: id => dispatch(addToCart(id)) };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Products);
